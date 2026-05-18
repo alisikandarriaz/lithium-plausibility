@@ -38,24 +38,43 @@ When a company declares a lithium supply chain path — can we verify it is geol
 
 ## Data sources
 
-All data used in this project is free and publicly available.
+All links below are confirmed working and were used to collect the actual data for this project.
 
-| # | Dataset | Source | Format | Link |
+| # | Dataset | Source | Format | Confirmed Link |
 |---|---|---|---|---|
-| 1 | USGS MRDS geological records | USGS | CSV + Shapefile | https://mrdata.usgs.gov/mrds |
+| 1 | USGS MRDS geological records | USGS | CSV + Shapefile | https://mrdata.usgs.gov/mrds/find-mrds-graded.php |
 | 2 | Mineral Commodity Summaries 2026 | USGS | PDF | https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-lithium.pdf |
-| 3 | Australian Critical Minerals Map 2025 | Geoscience Australia | PDF + XLSX | https://dx.doi.org/10.26186/150802 |
-| 4 | Australia Identified Mineral Resources 2024 | Geoscience Australia | PDF | https://www.ga.gov.au/aimr2024 |
-| 5 | CATL ESG Report 2025 | CATL | PDF | https://www.catl.com/en/about/sustainability |
+| 3 | Australian Critical Minerals Map 2025 | Geoscience Australia | PDF | https://d28rz98at9flks.cloudfront.net/150802/150802_00_0.pdf |
+| 4 | Australia Identified Mineral Resources 2024 | Geoscience Australia | PDF | https://minexcrc.com.au/wp-content/uploads/2025/03/2024-AIMR-100325.pdf |
+| 5 | CATL ESG Report 2025 | CATL | PDF | https://www.catl.com/en/uploads/1/file/public/202603/20260331135628_dciihbv1qr.pdf |
 | 6 | Ganfeng Annual Report 2024 | Ganfeng Lithium | PDF | https://www.ganfenglithium.com/ir1_en.html |
-| 7 | LG Chem Sustainability Report 2024 | LG Chem | PDF | https://www.lgchem.com |
-| 8 | Samsung SDI Sustainability Report 2025 | Samsung SDI | PDF | https://www.samsungsdi.com |
-| 9 | IGO Annual Report 2024 | IGO Limited | PDF | https://www.igo.com.au |
-| 10 | SQM Annual Report 2024 | SQM | PDF | https://ir.sqm.com |
-| 11 | Albemarle Annual Report 2025 | Albemarle Corporation | PDF | https://investors.albemarle.com |
-| 12 | Pilbara Minerals Annual Report 2024 | Pilbara Minerals | PDF | https://pls.com |
+| 7 | LG Chem Sustainability Report 2024 | LG Chem | PDF | https://www.lgchem.com/upload/file/sustainability/2024_LGChem_Sustainability_Report_ENG.pdf |
+| 8 | Samsung SDI Sustainability Report 2025 | Samsung SDI | PDF | https://www.samsungsdi.com/upload/download/sustainable-management/Samsung_SDI_Sustainability_Report_2025_EN.pdf |
+| 9 | IGO Annual Report 2024 | IGO Limited | PDF | https://www.igo.com.au/site/pdf/db560842-6410-48a5-a911-3e45093eb372/2024-Annual-Report.pdf |
+| 10 | SQM Annual Report 2024 | SQM | PDF | https://ir.sqm.com/system/files-encrypted/nasdaq_kms/assets/2025/06/12/2-37-42/MEMORIA%20SQM%202024_eng.pdf |
+| 11 | Albemarle Annual Report 2025 | Albemarle | PDF | https://investors.albemarle.com/financial-information/annual-reports |
+| 12 | Pilbara Minerals Annual Report 2024 | Pilbara Minerals | PDF | https://minedocs.com/27/Pilbara-Minerals-AR-06302024.pdf |
 | 13 | UN Comtrade lithium trade flows | United Nations | CSV | https://comtradeplus.un.org |
-| 14 | Sentinel-2 satellite imagery | Copernicus via Google Earth Engine | GeoTIFF | https://earthengine.google.com |
+| 14 | Sentinel-2 satellite imagery | Copernicus via Google Earth Engine | API | https://earthengine.google.com |
+| 15 | Open Supply Hub facility data | Open Supply Hub | CSV | https://opensupplyhub.org |
+
+---
+
+## Important note on Open Supply Hub
+
+A search of Open Supply Hub across all mining and material production sectors returned no results for Tianqi Lithium, CATL, Ganfeng, or any other lithium supply chain company. This is itself a key finding of this study — upstream lithium supply chains remain entirely absent from global facility transparency platforms that cover apparel and textile supply chains extensively.
+
+---
+
+## Accounts required
+
+The following platforms require a free account before downloading data:
+
+| Platform | Purpose | Registration |
+|---|---|---|
+| UN Comtrade | Trade flow data | https://comtradeplus.un.org |
+| Open Supply Hub | Facility data | https://opensupplyhub.org |
+| Google Earth Engine | Satellite imagery | https://earthengine.google.com |
 
 ---
 
@@ -65,7 +84,7 @@ All data used in this project is free and publicly available.
 |---|---|
 | Python 3.10 | Primary programming language |
 | Google Colab | Development and execution environment |
-| Google Earth Engine | Sentinel-2 satellite imagery access |
+| Google Earth Engine API | Sentinel-2 satellite imagery access |
 | pandas | Data loading and cleaning |
 | geopandas | Spatial data processing |
 | shapely | Geometric operations |
@@ -99,14 +118,9 @@ The entire pipeline runs in one single Google Colab notebook divided into 8 sect
 
 ## How to run this project
 
-Any student can run this project by following these steps:
+Step 1 — Create free accounts at the three platforms listed above
 
-Step 1 — Create a free account at these platforms:
-https://comtradeplus.un.org
-https://opensupplyhub.org
-https://earthengine.google.com
-
-Step 2 — Download all 14 data files from the links in the data sources table above
+Step 2 — Download all data files from the confirmed links in the data sources table
 
 Step 3 — Create a folder in your Google Drive named: lithium-supply-chain-plausibility
 
@@ -122,9 +136,9 @@ Step 6 — Open the notebook in Google Colab using the link below
 
 Step 7 — Run all cells from top to bottom
 
+---
 
 ## References
-
 - IEA (2025). World Energy Outlook 2025. International Energy Agency.
 - UNCTAD (2026). Critical Minerals, Critical Decisions. United Nations.
 - USGS (2026). Mineral Commodity Summaries 2026. U.S. Geological Survey.
